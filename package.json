@@ -5,7 +5,7 @@
   "main": "app/main.js",
   "scripts": {
     "dev:serve": "serve dev_build/",
-    "dev:build": "watchify app/main.js -t [ babelify --sourceMap ] -d -o dev_build/bundle.js",
+    "dev:build": "NODE_PATH=$NODE_PATH:app watchify app/main.js -t [ babelify --sourceMap ] -d -o dev_build/bundle.js",
     "dev:livereload": "livereload dev_build/ --port 3030",
     "dev": "parallelshell 'npm run dev:serve' 'npm run dev:build' 'npm run dev:livereload'"
   },
