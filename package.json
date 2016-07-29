@@ -1,0 +1,27 @@
+{
+  "name": "red",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/main.js",
+  "scripts": {
+    "dev:serve": "serve dev_build/",
+    "dev:build": "watchify app/main.js -t [ babelify --sourceMap ] -d -o dev_build/bundle.js",
+    "dev:livereload": "livereload dev_build/ --port 3030",
+    "dev": "parallelshell 'npm run dev:serve' 'npm run dev:build' 'npm run dev:livereload'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "parallelshell": "^2.0.0",
+    "serve": "^1.4.0",
+    "watchify": "^3.7.0",
+    "babel-core": "^6.8.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0"
+  },
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  }
+}
